@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="robot_ip" default="172.16.1.2" />
+  <arg name="arm_id" default="panda"/>
+  <arg name="robot" default="panda" doc="choose your robot. Possible values: [panda, fr3]"/>
+  <arg name="xacro_args" default="" />
+  <arg name="load_gripper" default="false" />
+  <rosparam command="load" file="$(find simple_franka_interface)/config/simple_franka_interface.yaml" subst_value="true" />
+  
+  <include file="$(find franka_control)/launch/franka_control.launch" >
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+    <arg name="load_gripper" value="$(arg load_gripper)" />
+  </include>
+    
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"  args="joint_velocity_interface"/>
+</launch>

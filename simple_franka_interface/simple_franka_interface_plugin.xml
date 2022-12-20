@@ -1,0 +1,8 @@
+<library path="lib/libsimple_franka_interface">
+
+  <class name="simple_franka_interface/JointVelocityInterface" type="simple_franka_interface::JointVelocityInterface" base_class_type="controller_interface::ControllerBase">
+    <description>
+	Joint velocity interface.
+    </description>
+  </class>
+</library>
