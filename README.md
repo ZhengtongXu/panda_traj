@@ -1,1 +1,1 @@
-# panda_traj_following
+# Real time trajectory following for Franka Panda
