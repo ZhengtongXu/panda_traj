@@ -9,4 +9,8 @@
 $ cd mv panda_traj ~/catkin_ws/src
 $ cd ~/catkin_ws & catkin_make_isolated -DCMAKE_BUILD_TYPE=Release
 ```
-
+## Usage
+```bash
+$ roslaunch simple_franka_interface 
+$ rosrun traj_generator example
+```
