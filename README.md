@@ -11,6 +11,6 @@ $ cd ~/catkin_ws & catkin_make_isolated -DCMAKE_BUILD_TYPE=Release
 ```
 ## Usage
 ```bash
-$ roslaunch simple_franka_interface 
+$ roslaunch simple_franka_interface real_time_traj_following.launch
 $ rosrun traj_generator example
 ```
