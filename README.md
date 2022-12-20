@@ -14,3 +14,4 @@ $ cd ~/catkin_ws & catkin_make_isolated -DCMAKE_BUILD_TYPE=Release
 $ roslaunch simple_franka_interface real_time_traj_following.launch
 $ rosrun traj_generator example
 ```
+Any position controller, velocity controller, and motion planner that can generate trajectory of end-effector can be integrated into this package. See 'example.cpp' for more information.
