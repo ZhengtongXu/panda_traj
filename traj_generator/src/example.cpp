@@ -74,7 +74,7 @@ int main(int argc, char **argv){
        	loop_rate.sleep();
    	}
 	geometry_msgs::PoseStamped ini_joint_angle = trajFollowing.get_joint_angle();
-    KDL::JntArray ini_joint_target(7);
+        KDL::JntArray ini_joint_target(7);
 	ini_joint_target(0) = ini_joint_angle.pose.orientation.w;
 	ini_joint_target(1) = ini_joint_angle.pose.orientation.x;
 	ini_joint_target(2) = ini_joint_angle.pose.orientation.y;
