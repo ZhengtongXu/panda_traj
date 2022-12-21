@@ -43,7 +43,7 @@ class JointVelocityInterface : public controller_interface::MultiInterfaceContro
 
     Eigen::Quaterniond q_state_;
     Eigen::Vector3d p_state_;
-    double filter_params_{2};
+    double filter_params_{0.2};
     double min_step_{0.0005};
 
 };
