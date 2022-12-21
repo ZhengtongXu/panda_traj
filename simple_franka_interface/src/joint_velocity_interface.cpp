@@ -87,7 +87,7 @@ void JointVelocityInterface::update(const ros::Time& /*time*/,
   statePublish();
   for (size_t i = 0; i < 7; ++i) {
     //PI control
-    if (abs(joint_velocity_target_[i]) > 3.5){
+    if (abs(joint_velocity_target_[i]) > 4.5){
       joint_velocity_target_[i] = 0.1*(joint_velocity_target_[i]/abs(joint_velocity_target_[i]));
     }
     velocity_joint_handles_[i].setCommand(joint_velocity_target_[i] + filter_params_*(joint_angle_target_[i] - velocity_joint_handles_[i].getPosition()));
