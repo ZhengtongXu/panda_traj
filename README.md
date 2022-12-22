@@ -4,6 +4,7 @@
 - catkin_simple (https://github.com/catkin/catkin_simple)
 - track_ik (https://traclabs.com/projects/trac-ik/)
 - franka_ros (https://github.com/frankaemika/franka_ros)
+- NLopt (https://nlopt.readthedocs.io/en/latest/)
 ## Build
 ```bash
 $ cd mv panda_traj ~/catkin_ws/src
