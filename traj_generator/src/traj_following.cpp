@@ -19,9 +19,9 @@
 using namespace Eigen;
 class traj_following{
 	private:
-        ros::NodeHandle nh;
+        	ros::NodeHandle nh;
 
-        ros::Subscriber end_state_sub;
+        	ros::Subscriber end_state_sub;
 		ros::Subscriber joint_state_sub;
 		ros::Publisher joint_velocity_pub;
 		ros::Publisher joint_angle_pub;
@@ -40,28 +40,28 @@ class traj_following{
 		int frequency;
 		bool ini_flag;
 
-        void end_state_sub_cb(const geometry_msgs::PoseStamped& msg){
-         	end_pose_state = msg;
-        };
+        	void end_state_sub_cb(const geometry_msgs::PoseStamped& msg){
+         		end_pose_state = msg;
+        	};
 		void joint_state_sub_cb(const geometry_msgs::PoseStamped& msg){
-         	joint_angle_state = msg;
-        };
+         		joint_angle_state = msg;
+        	};
 	public:
 
 		geometry_msgs::PoseStamped joint_angle_state;
 		geometry_msgs::PoseStamped end_pose_state;
 
 		traj_following(int, char**){
-  	        end_state_sub = nh.subscribe("/joint_velocity_interface/end_state", 1, &traj_following::end_state_sub_cb, this);
+  	        	end_state_sub = nh.subscribe("/joint_velocity_interface/end_state", 1, &traj_following::end_state_sub_cb, this);
 			joint_state_sub = nh.subscribe("/joint_velocity_interface/joint_state", 1, &traj_following::joint_state_sub_cb, this);
-		    joint_velocity_pub = nh.advertise<geometry_msgs::PoseStamped>("/joint_velocity_interface/joint_velocity_target", 1, true);
+		    	joint_velocity_pub = nh.advertise<geometry_msgs::PoseStamped>("/joint_velocity_interface/joint_velocity_target", 1, true);
 			joint_angle_pub = nh.advertise<geometry_msgs::PoseStamped>("/joint_velocity_interface/joint_angle_target", 1, true);
 
   			nh.param("chain_start", chain_start, std::string("panda_link0"));
   			nh.param("chain_end", chain_end, std::string("panda_link8"));
   			if (chain_start == "" || chain_end == ""){
-    			ROS_FATAL("Missing chain info in launch file");
-    			exit(-1);
+    				ROS_FATAL("Missing chain info in launch file");
+    				exit(-1);
   			}
   			nh.param("timeout", timeout, 0.005);
   			nh.param("urdf_param", urdf_param, std::string("/robot_description"));
