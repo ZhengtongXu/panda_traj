@@ -15,4 +15,4 @@ $ cd ~/catkin_ws & catkin_make
 $ roslaunch simple_franka_interface real_time_traj_following.launch
 $ rosrun traj_generator example
 ```
-Any position controller, velocity controller, and motion planner that can generate end-effector motion commands can be integrated into this package. See `example.cpp` for more information.
+Any position controller, velocity controller, and motion planner generating end-effector motion commands can be integrated into this package. See `example.cpp` for more information.
